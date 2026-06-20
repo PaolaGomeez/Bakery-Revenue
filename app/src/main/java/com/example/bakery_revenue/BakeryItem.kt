@@ -13,6 +13,5 @@ data class BakeryItem(
 
     @Composable
     fun BakeryRevenueScreen() {
-        // Se deja vacío por ahora, justo como pidió el profesor
     }
 }
