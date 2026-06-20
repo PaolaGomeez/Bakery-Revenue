@@ -1,4 +1,4 @@
-package com.example.bakery_revenue
+package com.example.bakery_revenu
 
 import androidx.compose.runtime.Composable
 
