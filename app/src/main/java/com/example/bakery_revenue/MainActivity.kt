@@ -38,6 +38,9 @@ class MainActivity : ComponentActivity() {
 // --- CHALLENGE 3 & 6 ---
 @Composable
 fun BakeryRevenueScreen() {
+    var cookiesSold by remember { mutableStateOf("") }
+    var cookiePrice by remember { mutableStateOf("") }
+
     // --- CHALLENGE 6 ---
     var muffinsSold by remember { mutableStateOf("") }
     var muffinPrice by remember { mutableStateOf("") }
@@ -52,6 +55,22 @@ fun BakeryRevenueScreen() {
             .padding(all = 16.dp)
     ) {
         Text("Bakery Revenue")
+        Spacer(modifier = Modifier.height(16.dp))
+
+        OutlinedTextField(
+            value = cookiePrice,
+            onValueChange = { cookiePrice = it },
+            label = { Text("Price per cookie") },
+            modifier = Modifier.fillMaxWidth()
+        )
+        Spacer(modifier = Modifier.height(8.dp))
+
+        OutlinedTextField(
+            value = cookiesSold,
+            onValueChange = { cookiesSold = it },
+            label = { Text("Cookies sold") },
+            modifier = Modifier.fillMaxWidth()
+        )
         Spacer(modifier = Modifier.height(16.dp))
 
         // --- CHALLENGE 7 ---
@@ -72,7 +91,6 @@ fun BakeryRevenueScreen() {
         )
         Spacer(modifier = Modifier.height(8.dp))
 
-        // --- CAKES DETECTED ---
         OutlinedTextField(
             value = cakesSold,
             onValueChange = { cakesSold = it },
